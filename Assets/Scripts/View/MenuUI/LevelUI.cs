@@ -20,16 +20,11 @@ namespace View.MenuUI{
         return;
       }
       if (MainSettings.Instance.SaveData.LevelSettings(level - 1).CurLevelComplete == LevelComplete.completed) {
-        Debug.Log("i yuy");
         levelButton.image.sprite = Resources.Load<Sprite>("Sprites/Сheckmark");
       }
     }
 
     public void LevelChoiceOnClick() {
-      Debug.Log(MainSettings.Instance.SaveData.LevelSettings(level-1).CurLevelComplete);
-      Debug.Log(MainSettings.Instance.SaveData.LevelSettings(level-1).Enemy);
-      Debug.Log(MainSettings.Instance.SaveData.LevelSettings(level-1).EnemyShip);
-      Debug.Log(MainSettings.Instance.SaveData.LevelSettings(level-1).SpecifiedTime);
       MainSettings.Instance.CurLevel = level;
       SceneManager.LoadScene(1);
     }

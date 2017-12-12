@@ -29,7 +29,6 @@ public class Blaster : MonoBehaviour, IBlaster{
 
   public void Fire() {
     //когда последний раз вызывался метод
-//    Debug.Log(curTime);
     if (curTime >= intervalTime) {
       curTime = 0;
       GameController.StaticObject.BlasterPool.Create(this);

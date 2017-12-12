@@ -19,17 +19,6 @@ namespace Model.Entity{
     private void Awake() {
       Hp = new ReactiveProperty<int>(defaultHp);
       IsDead = Hp.Select(x => Hp.Value <= 0).ToReactiveProperty();
-//      IsDead.ObserveEveryValueChanged(x => x.Value).Subscribe(xs => {
-//        GameController.GameOver = xs;
-//      }).AddTo(this);
-//      HP // ReactiveProperty count
-//        .ObserveEveryValueChanged(x => x.Value) // отслеживаем изменения в нем
-//        .Subscribe(xs => { // подписываемся
-//          ImpactDamage(xs); // вызываем метод отображения данных
-//        }).AddTo(this);
-//      IDisposable a = Observable.IntervalFrame(30).Subscribe(x => Debug.Log(x)).AddTo(this);
-//      Observable.IntervalFrame(30).TakeUntilDisable(this)
-//        .Subscribe(x => Debug.Log(x), () => Debug.Log("completed!"));
     }
 
     public ReactiveProperty<int> Hp { get; private set; }

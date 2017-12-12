@@ -25,7 +25,6 @@ namespace Model.Moving{
 
     public void Move(Vector2 input) {
       Vector3 movement = new Vector3(input.x*moveSpeed, 0.0f, input.y*moveSpeed);
-//      Debug.Log(movement);
       movement = Vector3.ClampMagnitude(movement, moveSpeed);
       rigidbodyCache.velocity = movement;
       rigidbodyCache.position = new Vector3
@@ -35,7 +34,6 @@ namespace Model.Moving{
         Mathf.Clamp(rigidbodyCache.position.z, spaceArea.MinZ, spaceArea.MaxZ)
       );
       rigidbodyCache.rotation = Quaternion.Euler(0.0f, 0.0f, -(movement.x/moveSpeed)*tilt);
-//      Debug.Log(rigidbodyCache.rotation + "  " + movement);
     }
   }
 }

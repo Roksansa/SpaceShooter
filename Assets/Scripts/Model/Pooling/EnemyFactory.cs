@@ -24,8 +24,6 @@ namespace Model.Pooling{
       Dictionary<int, bool> enemy = new Dictionary<int, bool>();
 
       Dictionary<int, bool> enemyShip = new Dictionary<int, bool>();
-
-      Debug.Log(i + "  " + j);
       prefabsEnemy = new GameObject[i + j];
       if (prefabsEnemy.Length > 0) {
         int k = 0;

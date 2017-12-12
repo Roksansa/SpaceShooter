@@ -34,14 +34,12 @@ namespace Controller{
 
     private void InitPool() {
       if (levelSettings.EnemyPrefabs == null) {
-        Debug.Log("i tut222");
         EnemyFactory = new EnemyFactory(levelSettings.Enemy,
           MainSettings.Instance.GetData().EnemyCount(),
           levelSettings.EnemyShip,
           MainSettings.Instance.GetData().EnemyShipCount());
       }
       else {
-        Debug.Log("i tut111");
         EnemyFactory = new EnemyFactory(new List<int>(levelSettings.EnemyPrefabs.Keys),
           new List<int>(levelSettings.EnemyShipPrefab.Keys));
       }
@@ -85,7 +83,6 @@ namespace Controller{
     }
 
     private IEnumerator StartEnemyCreate() {
-      Debug.Log(IsGameOver.Value + " 1111");
       while (!IsGameOver.Value) {
         EnemyPool.Create();
         yield return new WaitForSeconds(Random.Range(0.25f, 2.0f));
@@ -108,7 +105,6 @@ namespace Controller{
 
 
     private void InitData() {
-      Debug.Log("i tut");
       levelSettings = MainSettings.Instance.LevelSettings();
       SpecifiedTime.Value = levelSettings.SpecifiedTime;
     }

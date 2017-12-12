@@ -38,7 +38,6 @@ namespace Model.Settings{
 
     public void LoadGameState() {
       if (!File.Exists(filename)) { // Переход к загрузке только при наличии файла.
-        Debug.Log("No saved game");
         //создаем новый
         levelsSettings = new List<LevelSettings>();
         for (int i = 0; i < DefaultLevels; i++) {
